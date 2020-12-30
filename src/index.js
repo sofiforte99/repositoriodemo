@@ -16,7 +16,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  <NavBar/>,Componente,document.getElementById('root')
+  <NavBar/>, Componente, ItemListContainer, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
