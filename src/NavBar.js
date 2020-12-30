@@ -1,6 +1,6 @@
 import React from "react"
 
-function NavBar() {
+const NavBar = () => {
     
     return(
         <>
@@ -12,8 +12,14 @@ function NavBar() {
             <p>Productos</p>
             <p>Mi Cuenta</p>
         </nav>
+        <CartWidget/>
         </>
     ) 
+}
+
+function ItemListContainer ()
+{
+    <h2>Lista de Precios</h2>
 }
 
 export default NavBar;
