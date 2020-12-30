@@ -1,13 +1,35 @@
 body {
+  text-align: center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000;
+background-image:  url(https://image.freepik.com/vector-gratis/conjunto-empanada_23-2148571240.jpg);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+h1 {
+  background: linear-gradient(to right, #ed4264, #ffedbc);
+   font-family: 'Courier New', Courier, monospace;  
+}
+
+p{
+    margin: 25px;
+    font-weight: bold;
+    color: white;
+    font-weight: bolder;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #ed4264, #ffedbc);
+  }
+
+div{
+  color: white;
+  }
+
