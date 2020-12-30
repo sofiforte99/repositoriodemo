@@ -17,7 +17,7 @@ const NavBar = () => {
     ) 
 }
 
-function ItemListContainer ()
+ItemListContainer ()
 {
     <h2>Lista de Precios</h2>
 }
