@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import NavBar from './NavBar';
 import reportWebVitals from './reportWebVitals';
+import CartWidget from './CartWidget';
+import ItemListContainer from './ItemListContainer';
 
 
 //JSK
@@ -16,7 +18,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-  <NavBar/>, Componente, ItemListContainer, document.getElementById('root')
+  <NavBar/>, <CartWidget/>, <ItemListContainer/>, Componente, ItemListContainer, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
