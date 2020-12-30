@@ -17,9 +17,5 @@ const NavBar = () => {
     ) 
 }
 
-ItemListContainer ()
-{
-    <h2>Lista de Precios</h2>
-}
 
 export default NavBar;
