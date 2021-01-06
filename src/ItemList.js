@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 const ItemList = (() => {
 const [users, setUsers] = useState 
 const promesa = new Promise(() => {
-setTimeout(()=> {
     useEffect(() => {
+        setTimeout(()=> {
         [
             {id: 1, name: 'jamón y queso' , price: '$ 50', pictureUrl: 'https://chipabythedozen.com/wp-content/uploads/2019/08/empanadas-de-pollo-768x1152.jpg?ezimgfmt=ng:webp/ngcb1' },
             {id: 2, name: 'carne' , price: '$ 50', pictureUrl: 'https://chipabythedozen.com/wp-content/uploads/2019/08/empanadas-de-pollo-768x1152.jpg?ezimgfmt=ng:webp/ngcb1' },
@@ -16,8 +16,8 @@ setTimeout(()=> {
         
     
    
-    })
-},2000)
+    },2000) 
+})
 return (
     <>
     <Item/>
