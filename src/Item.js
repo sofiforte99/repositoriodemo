@@ -1,15 +1,13 @@
 import React from "react"
 
-const Item = ({id, name, price, pictureUrl}) => {
-
+function Item ({name, precio}){
     return (
-   <>
-    <ul>
-        <li> {id} {name} {price} {pictureUrl} </li>
-    </ul>
-    </>
+        <>
+        <h2>{name}</h2>
+        <h3>{precio}</h3>
+        </>
     )
-
 }
+
 
 export default Item; 
