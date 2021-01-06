@@ -1,5 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import ItemCount from './ItemCount'
 
 const useStyles = makeStyles({
     saludo: {
@@ -20,6 +21,7 @@ const ItemListContainer = ( {greeting}) => {
         <div className = {classes.saludo}>
            <h2>{greeting}</h2>
         </div>
+        <ItemCount/>
         </>
         )
 }
