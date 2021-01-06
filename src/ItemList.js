@@ -1,30 +1,37 @@
 import React, { useEffect, useState } from "react";
+import Item from './Item.js'; 
 
-const ItemList = (() => {
-const [users, setUsers] = useState 
-const promesa = new Promise(() => {
+const items = [{
+    nombre: "Carne",
+    precio: "10"
+  },{
+    nombre: "Verdura",
+    precio: "30"
+  },{
+    nombre: "Humita",
+    precio: "40"
+  }
+  ]
+
+
+  export default function ItemList() {
+    const [ items, setItems ] = useState([])
+  
     useEffect(() => {
-        setTimeout(()=> {
-        [
-            {id: 1, name: 'jamón y queso' , price: '$ 50', pictureUrl: 'https://chipabythedozen.com/wp-content/uploads/2019/08/empanadas-de-pollo-768x1152.jpg?ezimgfmt=ng:webp/ngcb1' },
-            {id: 2, name: 'carne' , price: '$ 50', pictureUrl: 'https://chipabythedozen.com/wp-content/uploads/2019/08/empanadas-de-pollo-768x1152.jpg?ezimgfmt=ng:webp/ngcb1' },
-            {id: 3, name: 'verdura' , price: '$ 50', pictureUrl: 'https://chipabythedozen.com/wp-content/uploads/2019/08/empanadas-de-pollo-768x1152.jpg?ezimgfmt=ng:webp/ngcb1' },
-            {id: 4, name: 'pollo' , price: '$ 50', pictureUrl: 'https://chipabythedozen.com/wp-content/uploads/2019/08/empanadas-de-pollo-768x1152.jpg?ezimgfmt=ng:webp/ngcb1' },
-            {id: 5, name: 'humita' , price: '$ 50', pictureUrl: 'https://chipabythedozen.com/wp-content/uploads/2019/08/empanadas-de-pollo-768x1152.jpg?ezimgfmt=ng:webp/ngcb1' },
-
-        ]
-        
-    
-   
-    },2000) 
-})
-return (
-    <>
-    <Item/>
-    </>
-)
-})
-    
-})
-
-export default ItemList;
+      const promesa = new Promise((resolve, reject)=>{
+        setTimeout(function(){
+          resolve(items); 
+        }, 2000);
+      }
+      )
+      .then(result => setItems(result)) 
+      .catch(err => console.log("Algo salio mal")) 
+  
+    },  [items]);
+  
+    return (
+      <>
+      {items.map(item => <Item name={item.name} precio={item.precio} /> )} 
+      </>
+    );
+  }

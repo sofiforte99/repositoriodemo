@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import ItemCount from './ItemCount'
+import ItemCount from './ItemCount';
 
 const useStyles = makeStyles({
     saludo: {

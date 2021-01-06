@@ -3,7 +3,7 @@ import './index.js';
 import NavBar from './NavBar.js';
 import ItemListContainer from './ItemListContainer.js';
 import ItemCount from './ItemCount.js';
-
+import ItemList from './ItemList.js';
 
 function App() {
 
@@ -12,6 +12,7 @@ function App() {
    <NavBar/>
    <ItemListContainer greeting ="Buen día"/>
    <ItemCount/>
+   <ItemList/>
    </>
   );
 }
