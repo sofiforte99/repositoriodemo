@@ -5,6 +5,10 @@ function ItemDetail ({item}) {
     <p>{titulo}</p>
     <p>{descripcion}</p>
     <p>{precio}</p>
+    <p>{image}</p> 
+    <div>
+    <ItemCount initial={initial} stock={stock} />
+    </div>
     </>
 }
 
