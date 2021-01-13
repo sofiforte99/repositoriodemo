@@ -12,7 +12,15 @@ const NavBar = () => {
             <p>Home</p>
             <p>Productos</p>
             <p>Mi Cuenta</p>
+            
         </nav>
+            <div>
+                { categories.map( category => <Link to={`/category/${category.categoryId}`}>
+                    <p>{category.name}</p>
+                    </Link>)}
+                <p>Sobre nosotros</p>
+                <p>CONTACTO</p>
+            </div>
         <CartWidget/>
         </>
     ) 
