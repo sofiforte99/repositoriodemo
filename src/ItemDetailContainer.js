@@ -1,10 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import empanada from './empanada.jpg';
-import empanada2 from './empanada2.png';
-import empanada3 from './empanada3.png';
+import empanada2 from './empanada2.jpg';
+import empanada3 from './empanada3.jpg';
 import ItemDetail from './ItemDetail';
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 const products = [{
   id: 1,

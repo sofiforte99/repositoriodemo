@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import ItemCount from "./ItemCount.js";
 
-function ItemDetail ({item}) {
+function ItemDetail ({titulo, descripcion, precio, image, initial, stock}) {
     return <>
     <p>{titulo}</p>
     <p>{descripcion}</p>

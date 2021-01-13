@@ -6,6 +6,12 @@ import ItemCount from './ItemCount.js';
 import ItemList from './ItemList.js';
 import ItemDetailContainer from './ItemDetailContainer.js';
 import ItemDetail from './ItemDetail';
+import empanada from './empanada.jpg';
+import empanada2 from './empanada2.jpg';
+import empanada3 from './empanada3.jpg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
 
 const products = [{
   id: 1,
@@ -54,11 +60,27 @@ function App() {
   }, []);
   return (
     <>
-   <NavBar/>
-   <ItemListContainer greeting ="Buen día"/>
    <ItemCount/>
    <ItemList/>
    <ItemDetail products = {items}/>
+
+   <div className="app">
+      <BrowserRouter>
+        <NavBar/>
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer greeting="Buen Día" products= {items} />
+          </Route>
+          <Route exact path="/category/:id">
+            <ItemListContainer greeting="Buen día" products={items} />
+          </Route>
+          <Route exact path="/item/:id">
+            <ItemDetailContainer greeting="Buen día" products = {items} />
+          </Route>
+      </Switch>
+      </BrowserRouter>
+    </div>
+  );
    </>
   );
 }
