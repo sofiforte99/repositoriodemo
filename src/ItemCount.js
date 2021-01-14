@@ -1,6 +1,6 @@
 
 import React, {useState} from "react"; 
-const ItemCount = ({stock}) =>
+const ItemCount = () =>
 {
     const [contador, setContador] = useState(1)
     const [stock] = useState(10)
