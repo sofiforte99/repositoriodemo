@@ -60,10 +60,6 @@ function App() {
   }, []);
   return (
     <>
-   <ItemCount/>
-   <ItemList/>
-   <ItemDetail products = {items}/>
-
    <div className="app">
       <BrowserRouter>
         <NavBar/>

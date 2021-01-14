@@ -20,7 +20,10 @@ const ItemCount = () =>
 
     const restarContador = () =>
     {
+        if (contador>1)
+        {
         setContador(contador - 1)
+        }
     }
 
 
