@@ -7,10 +7,8 @@ function ItemDetail ({titulo, descripcion, precio, image, initial, stock}) {
     <p>{descripcion}</p>
     <p>{precio}</p>
     <p>{image}</p> 
-    <div>
     <ItemCount initial={initial} stock={stock} />
-    </div>
-    </>
+        </>
 }
 
 export default ItemDetail;

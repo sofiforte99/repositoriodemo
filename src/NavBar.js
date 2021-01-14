@@ -3,7 +3,7 @@ import CartWidget from './CartWidget.js';
 import { Link } from 'react-router-dom';
 
 
-const products = [{
+const categories = [{
     categoryId: "carne",
     nombre: "empanada1"
 },
@@ -15,9 +15,9 @@ const products = [{
     nombre: "empanada3"
 }]
 
-const NavBar = () => {
-    
-    return(
+
+function NavBar() {
+    return (
         <>
         <header>
             <h1>Tienda de Empanadas</h1>
@@ -28,16 +28,16 @@ const NavBar = () => {
             <p>Mi Cuenta</p>
             
         </nav>
-            <div>
-                {products.map( product => <Link to={`/product/${product.productId}`}>
-                    <p>{product.nombre}</p>
+            <div className="navbar__links">
+                    { categories.map( category => <Link to={`/category/${category.categoryId}`}>
+                    <p>{category.nombre}</p>
                     </Link>)}
-                <p>Sobre nosotros</p>
-                <p>CONTACTO</p>
+                <p>nosotros</p>
+                <p>contacto</p>
+                <CartWidget />
             </div>
-        <CartWidget/>
-        </>
-    ) 
+    </>
+    )
 }
 
 

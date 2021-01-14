@@ -4,10 +4,10 @@ const ItemCount = () =>
 {
     const [contador, setContador] = useState(1)
     const [stock] = useState(10)
-   
+    const [initial] = useState(1)
     const aumentarContador = () =>
     {
-        if (contador<=stock)
+        if (contador<stock)
         {
         setContador(contador + 1)
         }
@@ -20,7 +20,7 @@ const ItemCount = () =>
 
     const restarContador = () =>
     {
-        if (contador>1)
+        if (contador>initial)
         {
         setContador(contador - 1)
         }
