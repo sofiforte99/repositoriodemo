@@ -1,13 +1,23 @@
-import React from "react"
+import React from 'react';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
 
-function Item ({name, precio}){
+function Item({nombre, imagen}) {
+
     return (
-        <>
-        <h2>{name}</h2>
-        <h3>{precio}</h3>
-        </>
+        <div className="item">
+             <Card>
+                 <CardActionArea>
+                    <CardMedia component="img"
+                        height="300"
+                        imagen={imagen}
+                        title={nombre}>
+                    </CardMedia>                                      
+      </CardActionArea>
+    </Card>
+        </div>
     )
 }
-
 
 export default Item; 

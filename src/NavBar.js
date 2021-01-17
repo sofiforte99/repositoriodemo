@@ -2,14 +2,13 @@ import React from "react"
 import CartWidget from './CartWidget.js';
 import { Link } from 'react-router-dom';
 
-
 const categories = [{
     categoryId: "carne",
-    nombre: "empanada1"
+    nombre: "empanada1",
 },
 {
     categoryId: "verdura",
-    nombre: "emapanada2"
+    nombre: "empanada2"
 },{
     categoryId: "humita",
     nombre: "empanada3"

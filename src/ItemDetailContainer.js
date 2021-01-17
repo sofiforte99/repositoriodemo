@@ -1,10 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import ItemDetail from './ItemDetail.js';
 import empanada from './empanada.jpg';
 import empanada2 from './empanada2.jpg';
 import empanada3 from './empanada3.jpg';
+import ItemDetail from './ItemDetail.js';
 import { useParams } from 'react-router-dom';
+
 
 const products = [{
   id: 1,
@@ -26,9 +27,9 @@ const products = [{
   categoryId: "verdura",
 },{
   id: 3,
-  nombre: "Empanada de humita",
+  nombre: "Empanada3",
   precio: "60",
-  imagen: empanada3,
+  imagen: empanada3 ,
   description: "Empanada de humita",
   stock: 45,
   initial: 12,
@@ -59,9 +60,9 @@ function ItemDetailContainer() {
             { item ?
             <ItemDetail
              id={item.id}
-             name={item.nombre}     
-             price={item.precio}
-             image={item.empanada}
+             nombre={item.nombre}     
+             precio={item.precio}
+             imagen={item.imagen}
              description={item.description}
              stock={item.stock}
              initial={item.initial}

@@ -1,9 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { useParams } from 'react-router-dom';
-import ItemList from './ItemList';
+import ItemList from './ItemList.js';
 import React, { useState, useEffect } from 'react';
-import ItemCount from './ItemCount';
-import ItemDetail from './ItemDetail';
+import ItemDetail from './ItemDetail.js';
+import Item from './Item.js';
 
 const useStyles = makeStyles({
     saludo: {
@@ -17,7 +17,7 @@ const useStyles = makeStyles({
     },
   });
 
-const ItemListContainer = ( {greeting, products, product}) => {
+const ItemListContainer = ( {greeting, products}) => {
     const classes = useStyles()
     const [ items, setItems ] = useState([])
 
@@ -42,6 +42,7 @@ const ItemListContainer = ( {greeting, products, product}) => {
             {products.length > 0 ? <ItemList products={items} /> : <h2>Cargando</h2>}           
         </div>
         <ItemDetail></ItemDetail>
+        <Item/>
         </>
         )
 }

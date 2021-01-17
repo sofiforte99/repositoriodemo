@@ -1,13 +1,13 @@
+import { useState, useEffect } from 'react';
 import './App.css';
 import './index.js';
-import NavBar from './NavBar.js';
 import ItemListContainer from './ItemListContainer.js';
-import ItemDetailContainer from './ItemDetailContainer.js';
+import NavBar from './NavBar.js';
 import empanada from './empanada.jpg';
 import empanada2 from './empanada2.jpg';
 import empanada3 from './empanada3.jpg';
+import ItemDetailContainer from './ItemDetailContainer.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 
 
 const products = [{
@@ -30,7 +30,7 @@ const products = [{
   categoryId: "verdura",
 },{
   id: 3,
-  nombre: "Empanada de humita",
+  nombre: "Empanada3",
   precio: "60",
   imagen: empanada3,
   description: "Empanada de humita",
@@ -65,7 +65,8 @@ function App() {
             <ItemListContainer greeting="Buen Día" products= {items} />
           </Route>
           <Route exact path="/category/:id">
-            <ItemListContainer greeting="Buen día" products={items} />
+            <ItemListContainer greeting="Buen día" products={items}
+ />
           </Route>
           <Route exact path="/item/:id">
             <ItemDetailContainer greeting="Buen día" products = {items} />
