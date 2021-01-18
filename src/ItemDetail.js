@@ -3,8 +3,8 @@ import ItemCount from "./ItemCount.js";
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
+
 
 
 function ItemDetail( { item, nombre, imagen, description, precio }) {
@@ -35,13 +35,7 @@ function ItemDetail( { item, nombre, imagen, description, precio }) {
         <div className="itemDetail">
              <Card>
               <CardActionArea>
-                <CardMedia
-                  component="img"
-                  alt={nombre}
-                  height="300"
-                  imagen={imagen}
-                  titulo={nombre}
-                />
+              <img src={imagen} alt={nombre} /> 
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {nombre}

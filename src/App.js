@@ -69,7 +69,7 @@ function App() {
  />
           </Route>
           <Route exact path="/item/:id">
-            <ItemDetailContainer greeting="Buen día" products = {items} />
+            <ItemDetailContainer greeting="Buen día" products={items} />
           </Route>
       </Switch>
       </BrowserRouter>
