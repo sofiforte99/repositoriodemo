@@ -49,8 +49,7 @@ function ItemDetail( { item, nombre, imagen, description, precio }) {
           <div className="itemDetail__contador">
             <ItemCount initial={initial} stock={stock} aumentarContador={aumentarContador} restarContador={restarContador}
             agregarAlCarrito={agregarAlCarrito} item={item} contador={contador} open={open}/>
-          </div>
-          <div></div>
+          </div>          
         </div>
     )
 }

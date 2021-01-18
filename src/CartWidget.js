@@ -1,14 +1,20 @@
 import React from 'react';
-import { Icon } from '@material-ui/core';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+
 
 const CartWidget = () => {
+
     return (
-        <div>
-        <Icon>add_circle</Icon>
-        <Icon color="primary">add_circle</Icon>
-        <Icon color="secondary">add_circle</Icon>
-        <Icon fontSize="small">add_circle</Icon>
-        <Icon style={{ fontSize: 30 }}>add_circle</Icon>
+        <div container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justify="center"
+        style={{ minHeight: '100vh' 
+           }}>
+            <>
+            <ShoppingCartIcon />
+            </>
         </div>
     )
 }

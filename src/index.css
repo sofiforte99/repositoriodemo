@@ -1,4 +1,5 @@
 body {
+  height: 125vh;
   text-align: center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +8,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #000;
-background-image:  url(https://image.freepik.com/vector-gratis/conjunto-empanada_23-2148571240.jpg);
+  background-image:  url(https://image.freepik.com/vector-gratis/conjunto-empanada_23-2148571240.jpg);
+  margin-top: 80px;
+  padding: 30px;
+
 }
 
 code {
@@ -15,18 +19,19 @@ code {
     monospace;
 }
 
+
 h1 {
-  background: linear-gradient(to right, #ed4264, #ffedbc);
    font-family: 'Courier New', Courier, monospace;  
 }
 
 p{
     margin: 25px;
     font-weight: bold;
-    color: white;
+    color: black;
     font-weight: bolder;
-    font-family: sans-serif;
-    background: linear-gradient(to right, #ed4264, #ffedbc);
+    font-family: 'Courier New', Courier, monospace;
+    display: inline;
+
   }
 
 div{
@@ -36,3 +41,26 @@ div{
   button{
     background-color: coral;
   }
+  header {
+    background-color: blanchedalmond;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+  header * {
+    display: inline;
+  }
+
+img {
+  height: 500px;
+  width: 1000px;
+  box-shadow: 5px 5px 5px rgba(68, 68, 68, 0.6);
+
+}
+  
+ 

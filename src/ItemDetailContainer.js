@@ -59,6 +59,7 @@ function ItemDetailContainer() {
         <div className="itemDetailContainer">
             { item ?
             <ItemDetail
+             item={item}
              id={item.id}
              nombre={item.nombre}     
              precio={item.precio}
