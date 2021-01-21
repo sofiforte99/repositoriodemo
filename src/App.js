@@ -8,7 +8,7 @@ import empanada2 from './empanada2.jpg';
 import empanada3 from './empanada3.jpg';
 import ItemDetailContainer from './ItemDetailContainer.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
+import CartProvider from './CartContext.js';
 
 const products = [{
   id: 1,
@@ -58,6 +58,7 @@ function App() {
   return (
     <>
    <div className="app">
+   <CartProvider>
       <BrowserRouter>
         <NavBar/>
         <Switch>
@@ -73,6 +74,7 @@ function App() {
           </Route>
       </Switch>
       </BrowserRouter>
+      </CartProvider>
     </div>
    </>
   );
