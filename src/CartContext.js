@@ -1,75 +1,63 @@
-import React, {useState, useContext, useEffect, createContext} from "react";
+import React, {useState, useEffect} from "react";
 
-const products = [{
-    id: 1,
-    nombre: "Empanada1",
-    precio: "75",
-    imagen: empanada,
-    description: "Empanada de Carne",
-    stock: 15,
-    initial: 1,
-    categoryId: "carne",
-  },{
-    id: 2,
-    nombre: "Empanada2",
-    precio: "50",
-    imagen: empanada2,
-    description: "Empanada de Verdura",
-    stock: 25,
-    initial: 2,
-    categoryId: "verdura",
-  },{
-    id: 3,
-    nombre: "Empanada3",
-    precio: "60",
-    imagen: empanada3 ,
-    description: "Empanada de humita",
-    stock: 45,
-    initial: 12,
-    categoryId: "humita",
-  }
-  ]
-  
+export const CartContext = React.createContext();
 
-const contexto = createContext ({products}) ;
-const {Consumer, Provider} = contexto;
+const CartProvider = ({children}) => {
 
-const productProvider = ({children}) => {
-    const [products, setProducts] = useState(0);
+    const [cart, setCart] = useState ([]);
+    const [quantity, setQuantity] = useState(0);
+    const [total, setTotal] = useState ();
 
-    const addProduct = (id) => {
+    useEffect(() => {
+        var t= 0
+
+        const totals = cart.map (p => p.price * p.amount)
+
+        totals.map (p=>t = t+p)
+
+        setTotal (t)
+
+        const cartQuantity = cart.length
+        
+        setQuantity (cartQuantity)
+    }, [cart]
+    )
+
+    const addProduct = (id, value) => {
         let actualCart = cart.map(product => product.id === id ? product.quantity += value : product)
         setCart(actualCart)
     }
 
     const removeProduct = (productId) => {
         console.log ("Borrar producto");
-        setProducts(product.filter(({ id }) => id !== productId));
-        return (
-            <li>
-                {producto.nombre}
-                <button onClick = {borrarProducto}>Borrar este producto</button>
-            </li>
-        )
+        setCart(cart.filter(({ id }) => id !== productId));
+       
     }
 
     const clearProduct = () =>{
         console.log ("Borrar productos");
-        setProducts([]);
-        return (
-            <li>
-              {producto.nombre}
-              <button onClick={borrarProductos}>Borrar productos</button>
-            </li>)
+        setCart([]);
+        setQuantity(0);
     };
 
     const isInCart = (id) => {
 
+        const item = cart.find (p=> p.id === id)
+
+        if (item === undefined){
+            return false
+        }
+
+        else {
+            return true
+        }
     }
 
     return (
-        <Provider value = {{product, removeProduct, addProduct, clearProduct, isInCart}}>
+        <CartContext.Provider value = {{cart, quantity, total, removeProduct, addProduct, clearProduct, isInCart}}>
             {children}
-        </Provider>
+        </CartContext.Provider>
     );
 };
+
+export default CartProvider;
