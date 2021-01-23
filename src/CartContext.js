@@ -23,11 +23,20 @@ const CartProvider = ({children}) => {
     }, [cart]
     )
 
-    const addProduct = (id, value) => {
-        let actualCart = cart.map(product => product.id === id ? product.quantity += value : product)
-        setCart(actualCart)
+    function addProduct (product, contador, id) {
+         
+        if (isInCart(id)){
+            const oldProduct = cart.find(p => p.id === id)
+            const newQuantity = oldProduct.amount + contador           
+            const newProduct = { id: oldProduct.id, nombre: oldProduct.nombre, imagen: oldProduct.imagen, precio: oldProduct.precio, amount: newQuantity}
+            const cartWithoutOld = cart.filter(product => product.id =! id)
+            const cartWithNew = [...cartWithoutOld, newProduct]
+            setCart(cartWithNew)            
+        } else {
+            const newItem = { id: product.id, nombre: product.nombre, imagen: product.imagen, precio: product.precio, amount: contador }
+            setCart([...cart, newItem]) 
+        }
     }
-
     const removeProduct = (productId) => {
         console.log ("Borrar producto");
         setCart(cart.filter(({ id }) => id !== productId));
