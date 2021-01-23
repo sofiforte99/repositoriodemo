@@ -11,7 +11,7 @@ const CartProvider = ({children}) => {
     useEffect(() => {
         var t= 0
 
-        const totals = cart.map (p => p.price * p.amount)
+        const totals = cart.map (p => p.precio * p.amount)
 
         totals.map (p=>t = t+p)
 

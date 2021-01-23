@@ -9,6 +9,7 @@ import empanada3 from './empanada3.jpg';
 import ItemDetailContainer from './ItemDetailContainer.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartProvider from './CartContext.js';
+import Cart from './Cart.js';
 
 const products = [{
   id: 1,
@@ -72,6 +73,11 @@ function App() {
           <Route exact path="/item/:id">
             <ItemDetailContainer greeting="Buen día" products={items} />
           </Route>
+
+          <Route exact path="/cart">
+            <Cart />
+          </Route>
+
       </Switch>
       </BrowserRouter>
       </CartProvider>

@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import ItemCount from "./ItemCount.js";
+import CartContext from "./CartContext.js";
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -49,7 +50,10 @@ function ItemDetail( { item, nombre, imagen, description, precio }) {
           <div className="itemDetail__contador">
             <ItemCount initial={initial} stock={stock} aumentarContador={aumentarContador} restarContador={restarContador}
             agregarAlCarrito={agregarAlCarrito} item={item} contador={contador} open={open}/>
-          </div>          
+          </div>   
+          <div className ="cartContext">
+            <CartContext></CartContext>
+          </div>       
         </div>
     )
 }
