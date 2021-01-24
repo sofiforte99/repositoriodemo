@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom'
+import { CartContext } from './CartContext';
 
 
 
-function ItemCount({ item, aumentarContador, restarContador, agregarAlCarrito, contador, open }) {
-
+function ItemCount({ item, aumentarContador, restarContador, agregarAlCarrito, contador}) {
+    const [ open, setOpen ] = useState(false);
+    const { addProduct} = useContext(CartContext)
+    function agregarAlCarrito(item, contador, id){
+        addProduct(item, contador, id);
+        setOpen(true)
+    }
     
     return (
         <div className="itemCount">
