@@ -3,7 +3,7 @@ import { CartContext } from './CartContext.js'
 import { Button } from '@material-ui/core';
 
 function CartItem( { id, nombre, imagen, precio, amount }) {
-    const { eliminateFromCart } = useContext(CartContext)
+    const { removeProduct } = useContext(CartContext)
 
     return (
         <div className="cartItem">
@@ -22,7 +22,7 @@ function CartItem( { id, nombre, imagen, precio, amount }) {
             <div className="cartItem__parcial">
                 <h3>${amount*precio}</h3>
             </div>
-            <Button onClick={ () => eliminateFromCart(id)} variant="contained" color="primary">
+            <Button onClick={ () => removeProduct(id)} variant="contained" color="primary">
                 Eliminar
             </Button>
         </div>
