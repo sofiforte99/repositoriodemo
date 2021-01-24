@@ -6,7 +6,7 @@ import { CartContext } from './CartContext';
 
 
 
-function ItemCount({ item, aumentarContador, restarContador, agregarAlCarrito, contador}) {
+function ItemCount({ item, aumentarContador, restarContador, id, agregarAlCarrito, contador}) {
     const [ open, setOpen ] = useState(false);
     const { addProduct} = useContext(CartContext)
     function agregarAlCarrito(item, contador, id){
@@ -22,7 +22,7 @@ function ItemCount({ item, aumentarContador, restarContador, agregarAlCarrito, c
                 <Button variant="contained" onClick={aumentarContador}>+</Button>
             </div>
             { !open ? (<div className="itemCount__agregar">
-                <Button variant="contained" color="primary" onClick={ () => agregarAlCarrito(item)}>
+                <Button variant="contained" color="primary" onClick={ () => agregarAlCarrito(item, contador, id)}>
                   <h3>Agregar al <ShoppingCartIcon/> </h3>
                 </Button>
             </div>) : 
