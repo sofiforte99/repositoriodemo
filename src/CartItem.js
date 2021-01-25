@@ -14,13 +14,13 @@ function CartItem( { id, nombre, imagen, precio, amount }) {
                 <img src={imagen} alt={nombre} />
             </div>
             <div className="cartItem__price">
-                <h3>${precio}</h3>
+                <h3>Costo individual ${precio}</h3>
             </div>
             <div className="cartItem__amount">
-                <h3>{amount}</h3>
+                <h3>Cantidad de items: {amount}</h3>
             </div>
             <div className="cartItem__parcial">
-                <h3>${amount*precio}</h3>
+                <h3>El precio es ${amount*precio}</h3>
             </div>
             <Button onClick={ () => removeProduct(id)} variant="contained" color="primary">
                 Eliminar
