@@ -10,9 +10,9 @@ import ItemDetailContainer from './ItemDetailContainer.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartProvider from './CartContext.js';
 import Cart from './Cart.js';
-import {firestore} from "./firebase";
+import {firestore} from "./firebaseConfig.js";
 
-
+/*
 const products = [{
   id: 1,
   nombre: "Empanada1",
@@ -42,42 +42,24 @@ const products = [{
   categoryId: "humita",
 }
 ]
-
+*/
 const App= () => {
 
-  const [items, setItems] = useState([])
+  const [ items, setItems ] = useState([])
+      useEffect(() => {
+      const db = firestore
+      const collection = db.collection('items')
+      const query = collection.get()
+      
+      query
+        .then((result) => {
+          setItems(result.docs.map(p => ({id: p.id, ...p.data()})))
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+  }, [items])
 
-
-  useEffect(() => {
-
-  const db = firestore
-  const collection = db.collection ("items")
-  const query = collection.get()
-
-  query
-  .then((resultado) => {
-  
-    const items_array = resultado.docs
-
-    items_array.forEach(item=>
-      {
-        const producto_final = {
-        id: item.id,
-        ...item.data() 
-   
-       }  
-  
-    setItems([...items, producto_final]) 
-
-},[])
-
-  } 
-  )
-  .catch(() => {
-    console.log ("Fallo")
-  } 
-  )
-})
 
 /*function App() {
   const [ items, setItems ] = useState([])

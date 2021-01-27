@@ -1,13 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
-import empanada from './empanada.jpg';
-import empanada2 from './empanada2.jpg';
-import empanada3 from './empanada3.jpg';
 import ItemDetail from './ItemDetail.js';
 import { useParams } from 'react-router-dom';
+import { firestore } from './firebaseConfig.js';
 
 
-const products = [{
+
+/*const products = [{
   id: 1,
   nombre: "Empanada1",
   precio: "75",
@@ -36,12 +35,12 @@ const products = [{
   categoryId: "humita",
 }
 ]
-
+*/
 function ItemDetailContainer() {
     const [ item, setItem ] = useState()
     const { id } = useParams()
 
-    useEffect(() => {
+    /*useEffect(() => {
         const promesa = new Promise((resolve, reject)=>{
         setTimeout(function(){
             const i = products.find(product => product.id == id)
@@ -53,7 +52,24 @@ function ItemDetailContainer() {
         promesa.then(result => setItem(result)) 
         promesa.catch(err => console.log("Algo salio mal")) 
 
-    },  [id]);
+    },  [id]);*/
+
+    useEffect(() => {
+      const db = firestore
+      const collection = db.collection('items') 
+      const item = collection.doc(id)
+ 
+      item.get()
+       .then( (i) => {
+         setItem({ id: i.id, ...i.data()})
+       })
+
+       console.log(item)
+
+
+ 
+   },  [id]);
+   console.log(item)
 
     return (
         <div className="itemDetailContainer">
@@ -69,7 +85,8 @@ function ItemDetailContainer() {
              initial={item.initial}
              />
              :
-             <h2>Cargando</h2>}
+             <h2>Cargando</h2>             
+             }
         </div>
     )
 }
