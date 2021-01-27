@@ -10,6 +10,8 @@ import ItemDetailContainer from './ItemDetailContainer.js';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartProvider from './CartContext.js';
 import Cart from './Cart.js';
+import {firestore} from "./firebase";
+
 
 const products = [{
   id: 1,
@@ -41,10 +43,45 @@ const products = [{
 }
 ]
 
-function App() {
+const App= () => {
 
+  const [items, setItems] = useState([])
+
+
+  useEffect(() => {
+
+  const db = firestore
+  const collection = db.collection ("items")
+  const query = collection.get()
+
+  query
+  .then((resultado) => {
+  
+    const items_array = resultado.docs
+
+    items_array.forEach(item=>
+      {
+        const producto_final = {
+        id: item.id,
+        ...item.data() 
+   
+       }  
+  
+    setItems([...items, producto_final]) 
+
+},[])
+
+  } 
+  )
+  .catch(() => {
+    console.log ("Fallo")
+  } 
+  )
+})
+
+/*function App() {
   const [ items, setItems ] = useState([])
-
+  
   useEffect(() => {
     const promesa = new Promise((resolve, reject)=>{
       setTimeout(function(){
@@ -55,7 +92,8 @@ function App() {
     promesa.then( result => setItems(result)) 
     promesa.catch( err => console.log("Algo salio mal")) 
 
-  }, []);
+  }, []);*/
+
   return (
     <>
    <div className="app">
