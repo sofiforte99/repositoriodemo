@@ -6,7 +6,7 @@ import { CartContext } from './CartContext';
 
 
 
-function ItemCount({ item, aumentarContador, restarContador, id, agregarAlCarrito, contador}) {
+function ItemCount({ item, aumentarContador, restarContador, id, contador}) {
     const [ open, setOpen ] = useState(false);
     const { addProduct} = useContext(CartContext)
     function agregarAlCarrito(item, contador, id){

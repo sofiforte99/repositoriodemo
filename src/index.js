@@ -5,9 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 //JSK
 
-const Componente = <p>Hola Mundo</p>
-
-
 
 ReactDOM.render(
   <React.StrictMode>

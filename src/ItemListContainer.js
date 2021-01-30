@@ -26,7 +26,7 @@ const ItemListContainer = ( {greeting, products}) => {
 
     useEffect(() => {
         if(id){
-            const category = products.filter(product => product.categoryId == id)
+            const category = products.filter(product => product.categoryId === id)
             setItems(category)
         }
         else{
